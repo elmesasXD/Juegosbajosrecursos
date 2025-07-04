@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juegos Gratis para PC de Bajos Recursos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #181c23;
+            color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #23272f;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #23272f;
+            border-radius: 8px;
+        }
+        .game-list {
+            list-style: none;
+            padding: 0;
+        }
+        .game {
+            background: #292e39;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            padding: 14px 16px;
+            transition: background 0.2s;
+        }
+        .game:hover {
+            background: #33394a;
+        }
+        .game-title {
+            font-size: 1.2em;
+            margin: 0 0 6px 0;
+            color: #6ec1e4;
+        }
+        .game-desc {
+            margin: 0 0 8px 0;
+        }
+        .game-link {
+            color: #ffb347;
+            text-decoration: none;
+        }
+        .game-link:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Juegos Gratis para PC de Bajos Recursos</h1>
+        <p>¡Diviértete sin gastar dinero y sin exigirle a tu PC!</p>
+    </header>
+    <div class="container">
+        <ul class="game-list" id="gameList">
+            <!-- Aquí se insertan los juegos -->
+        </ul>
+    </div>
+    <script>
+        const juegos = [
+            {
+                titulo: "Brawlhalla",
+                descripcion: "Juego de lucha multijugador estilo plataformas, muy ligero.",
+                enlace: "https://store.steampowered.com/app/291550/Brawlhalla/"
+            },
+            {
+                titulo: "Team Fortress 2",
+                descripcion: "Clásico shooter en primera persona por equipos, gratuito y con bajos requisitos.",
+                enlace: "https://store.steampowered.com/app/440/Team_Fortress_2/"
+            },
+            {
+                titulo: "Warframe",
+                descripcion: "Juego de acción cooperativo en tercera persona con buena optimización.",
+                enlace: "https://store.steampowered.com/app/230410/Warframe/"
+            },
+            {
+                titulo: "Trove",
+                descripcion: "MMO de aventuras y construcción con gráficos tipo voxel.",
+                enlace: "https://store.steampowered.com/app/304050/Trove/"
+            },
+            {
+                titulo: "Realm of the Mad God Exalt",
+                descripcion: "MMO bullet hell pixelado, muy ligero y divertido.",
+                enlace: "https://store.steampowered.com/app/200210/Realm_of_the_Mad_God_Exalt/"
+            },
+            {
+                titulo: "Unturned",
+                descripcion: "Survival de zombis con gráficos muy simples.",
+                enlace: "https://store.steampowered.com/app/304930/Unturned/"
+            },
+            {
+                titulo: "Paladins",
+                descripcion: "Shooter en equipos estilo hero, similar a Overwatch pero más ligero.",
+                enlace: "https://store.steampowered.com/app/444090/Paladins/"
+            },
+            {
+                titulo: "OpenTTD",
+                descripcion: "Simulador de transporte clásico, open source y ultra ligero.",
+                enlace: "https://www.openttd.org/downloads/openttd-releases/latest.html"
+            },
+            {
+                titulo: "Doki Doki Literature Club!",
+                descripcion: "Visual novel ligera y sorprendente (no apta para menores).",
+                enlace: "https://ddlc.moe/"
+            },
+            {
+                titulo: "Cave Story",
+                descripcion: "Legendario metroidvania indie, muy ligero. (Versión gratuita original).",
+                enlace: "https://www.cavestory.org/download/cave-story.php"
+            }
+        ];
+
+        const gameList = document.getElementById('gameList');
+        juegos.forEach(juego => {
+            const li = document.createElement('li');
+            li.className = 'game';
+            li.innerHTML = `
+                <div class="game-title">${juego.titulo}</div>
+                <div class="game-desc">${juego.descripcion}</div>
+                <a class="game-link" href="${juego.enlace}" target="_blank">Descargar / Ver más</a>
+            `;
+            gameList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
